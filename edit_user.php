@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, Biographi = :Biographi WHERE user_id = :user_id";
     $statement = $db->prepare($query);
     $statement->execute([
-        'full_name' => $fullName,
+        'Name' => $fullName,
         'phone' => $phone,
         'email' => $email,
         'birth_date' => $birthDate,
