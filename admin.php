@@ -54,7 +54,7 @@ print ('Вы успешно авторизовались и видите защ�
             $user = 'u67323';
             $pass = '3649631';
             $conn = new PDO(
-                'mysql:host=localhost;dbname=3649631',
+                'mysql:host=localhost;dbname=u67323',
                 $user,
                 $pass,
                 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
