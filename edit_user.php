@@ -12,7 +12,7 @@ $db = new PDO(
 // Проверка, был ли отправлен запрос на обновление данных
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_POST['user_id'];
-    $fullName = $_POST['Name'];
+    $fullName = $_POST['full_name'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $birthDate = $_POST['birth_date'];
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, Biographi = :Biographi WHERE user_id = :user_id";
     $statement = $db->prepare($query);
     $statement->execute([
-        'Name' => $fullName,
+        'full_name' => $fullName,
         'phone' => $phone,
         'email' => $email,
         'birth_date' => $birthDate,
