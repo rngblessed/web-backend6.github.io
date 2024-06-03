@@ -51,10 +51,10 @@ print ('Вы успешно авторизовались и видите защ�
     <div class="osnova">
         <div class="wrap3 lh-lg font-monospace">
             <?php
-            $user = 'u67307';
-            $pass = '2532509';
+            $user = 'u67323';
+            $pass = '3649631';
             $conn = new PDO(
-                'mysql:host=localhost;dbname=u67307',
+                'mysql:host=localhost;dbname=3649631',
                 $user,
                 $pass,
                 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
@@ -76,18 +76,18 @@ print ('Вы успешно авторизовались и видите защ�
 
         <div class="wrap1 lh-lg font-monospace">
             <?php
-            $user = 'u67307';
-            $pass = '2532509';
+            $user = 'u67323';
+            $pass = '3649631';
             $conn = new PDO(
-                'mysql:host=localhost;dbname=u67307',
+                'mysql:host=localhost;dbname=u67323',
                 $user,
                 $pass,
                 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
             );
 
-            $query = "SELECT u.user_id, u.full_name, u.phone, u.email, u.birth_date, u.gender, u.bio, u.contract_agreed, 
+            $query = "SELECT u.user_id, u.Name, u.phone, u.email, u.birth_date, u.gender, u.bio, u.contract_agreed, 
             GROUP_CONCAT(l.language_name) AS languages
-     FROM users u
+     FROM main u
      LEFT JOIN user_languages l ON u.user_id = l.user_id
      GROUP BY u.user_id";
             $statement = $conn->query($query);
@@ -95,7 +95,7 @@ print ('Вы успешно авторизовались и видите защ�
             foreach ($users as $user) {
                 print "<div class='info'>";
                 print "<p>ID: " . $user['user_id'] . "</p>";
-                print "<p>Имя: " . $user['full_name'] . "</p>";
+                print "<p>Имя: " . $user['Name'] . "</p>";
                 print "<p>Телефон: " . $user['phone'] . "</p>";
                 print "<p>Email: " . $user['email'] . "</p>";
                 print "<p>Дата рождения: " . $user['birth_date'] . "</p>";

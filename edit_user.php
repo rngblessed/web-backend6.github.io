@@ -1,9 +1,9 @@
 <?php
 // Подключение к базе данных
-$user = 'u67307';
-$pass = '2532509';
+$user = 'u67323';
+$pass = '3649631';
 $db = new PDO(
-    'mysql:host=localhost;dbname=u67307',
+    'mysql:host=localhost;dbname=u67323',
     $user,
     $pass,
     [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
@@ -12,7 +12,7 @@ $db = new PDO(
 // Проверка, был ли отправлен запрос на обновление данных
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_POST['user_id'];
-    $fullName = $_POST['full_name'];
+    $fullName = $_POST['Name'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $birthDate = $_POST['birth_date'];
@@ -20,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $bio = $_POST['bio'];
 
     // Запрос на обновление данных пользователя
-    $query = "UPDATE users SET full_name = :full_name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, bio = :bio WHERE user_id = :user_id";
+    $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, bio = :bio WHERE user_id = :user_id";
     $statement = $db->prepare($query);
     $statement->execute([
-        'full_name' => $fullName,
+        'Name' => $fullName,
         'phone' => $phone,
         'email' => $email,
         'birth_date' => $birthDate,
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Получение информации о пользователе для редактирования
 $userId = $_GET['id'];
-$query = "SELECT * FROM users WHERE user_id = :user_id";
+$query = "SELECT * FROM main WHERE user_id = :user_id";
 $statement = $db->prepare($query);
 $statement->execute(['user_id' => $userId]);
 $user = $statement->fetch(PDO::FETCH_ASSOC);

@@ -1,9 +1,9 @@
 <?php
 try {
-    $user = 'u67307';
-    $pass = '2532509';
+    $user = 'u67323';
+    $pass = '3649631';
     $conn = new PDO(
-        'mysql:host=localhost;dbname=u67307',
+        'mysql:host=localhost;dbname=u67323',
         $user,
         $pass,
         [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
@@ -20,7 +20,7 @@ try {
         $stmt_delete_user_languages->execute(['user_id' => $user_id]);
 
         // SQL запрос для удаления пользователя
-        $sql_delete_user = "DELETE FROM users WHERE user_id = :user_id";
+        $sql_delete_user = "DELETE FROM main WHERE user_id = :user_id";
         $stmt_delete_user = $conn->prepare($sql_delete_user);
         $stmt_delete_user->execute(['user_id' => $user_id]);
 
