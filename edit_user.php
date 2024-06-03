@@ -72,8 +72,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             <input type="hidden" class="form-control rounded-pill" name="user_id" value="<?= $user['user_id'] ?>">
             <div class="col-auto">
                 <label>Имя:</label>
-                <input type="text" class="form-control rounded-pill" name="full_name"
-                    value="<?= $user['full_name'] ?>"><br>
+                <input type="text" class="form-control rounded-pill" name="full_name" value="<?= $user['Name'] ?>"><br>
             </div>
             <div class="col-auto">
                 <label>Телефон:</label>
