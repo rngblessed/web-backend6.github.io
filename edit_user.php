@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $bio = $_POST['bio'];
 
     // Запрос на обновление данных пользователя
-    $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, bio = :bio WHERE user_id = :user_id";
+    $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, Biographi = :Biographi WHERE user_id = :user_id";
     $statement = $db->prepare($query);
     $statement->execute([
         'Name' => $fullName,
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'email' => $email,
         'birth_date' => $birthDate,
         'gender' => $gender,
-        'bio' => $bio,
+        'Biographi' => $bio,
         'user_id' => $userId
     ]);
 

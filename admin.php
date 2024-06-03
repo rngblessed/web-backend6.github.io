@@ -85,7 +85,7 @@ print ('Вы успешно авторизовались и видите защ�
                 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
             );
 
-            $query = "SELECT u.user_id, u.Name, u.phone, u.email, u.birth_date, u.gender, u.bio, u.contract_agreed, 
+            $query = "SELECT u.user_id, u.Name, u.phone, u.email, u.birth_date, u.gender, u.Biographi, u.contract_agreed, 
             GROUP_CONCAT(l.language_name) AS languages
      FROM main u
      LEFT JOIN user_languages l ON u.user_id = l.user_id
@@ -101,7 +101,7 @@ print ('Вы успешно авторизовались и видите защ�
                 print "<p>Дата рождения: " . $user['birth_date'] . "</p>";
                 print "<p>Язык: " . $user['languages'] . "</p>";
                 print "<p>Пол: " . $user['gender'] . "</p>";
-                print "<p>Биография: " . $user['bio'] . "</p>";
+                print "<p>Биография: " . $user['Biographi'] . "</p>";
                 print "<p>С политикой: " . $user['contract_agreed'] . "</p>";
                 print "<a href='edit_user.php?id=" . $user['user_id'] . "'>Редактировать</a></br>";
                 print "<a href='delete_user.php?id=" . $user['user_id'] . "'>Удалить</a>";
