@@ -12,7 +12,7 @@ $db = new PDO(
 // Проверка, был ли отправлен запрос на обновление данных
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_POST['user_id'];
-    $fullName = $_POST['Name'];
+    $Name = $_POST['Name'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $birthDate = $_POST['birth_date'];
