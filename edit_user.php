@@ -96,7 +96,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="col-auto">
                 <label>Биография:</label><br>
-                <textarea class="form-control rounded-pill" name="bio"><?= $user['bio'] ?></textarea><br>
+                <textarea class="form-control rounded-pill" name="bio"><?= $user['Biographi'] ?></textarea><br>
             </div>
             <div class="col-auto">
                 <button class="form-control rounded-pill" type="submit">Сохранить</button>
