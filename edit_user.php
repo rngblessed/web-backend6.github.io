@@ -1,13 +1,12 @@
-<?php // Подключение к базе данных $user='u67323' ; $pass='3649631' ; $db=new
-PDO(
+<?php
+// Подключение к базе данных
+$user = 'u67323';
+$pass = '3649631';
+$db = new PDO(
     'mysql:host=localhost;dbname=u67323',
     $user,
     $pass,
-    [
-        PDO::ATTR_PERSISTENT => true,
-        PDO::ATTR_ERRMODE =>
-            PDO::ERRMODE_EXCEPTION
-    ]
+    [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
 // Проверка, был ли отправлен запрос на обновление данных
@@ -21,8 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $bio = $_POST['bio'];
 
     // Запрос на обновление данных пользователя
-    $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender,
-    Biographi = :Biographi WHERE user_id = :user_id";
+    $query = "UPDATE main SET Name = :Name, phone = :phone, email = :email, birth_date = :birth_date, gender = :gender, Biographi = :Biographi WHERE user_id = :user_id";
     $statement = $db->prepare($query);
     $statement->execute([
         'Name' => $fullName,
