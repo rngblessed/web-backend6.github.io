@@ -1,7 +1,7 @@
 <?PHP
 
-$user = 'u67307';
-$pass = '2532509';
+$user = 'u67323';
+$pass = '3649631';
 $db = new PDO(
     'mysql:host=localhost;dbname=u67307',
     $user,
