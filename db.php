@@ -3,7 +3,7 @@
 $user = 'u67323';
 $pass = '3649631';
 $db = new PDO(
-    'mysql:host=localhost;dbname=u67307',
+    'mysql:host=localhost;dbname=u67323',
     $user,
     $pass,
     [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
