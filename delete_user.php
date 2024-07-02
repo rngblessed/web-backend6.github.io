@@ -57,8 +57,6 @@ $conn = null;
     <div class="wrap1 lh-lg font-monospace">
         <form method="POST" id="form" class="row g-3 needs-validation" action='delete_user.php?id=" . $user['user_id'] . "'>
 
-            <label for="user_id">ID пользователя:</label>
-            <input type="text" name="user_id" id="user_id">
             <button type="submit">Удалить пользователя</button>
         </form>
     </div>
