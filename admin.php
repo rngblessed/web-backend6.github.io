@@ -93,11 +93,17 @@ print ('Вы успешно авторизовались и видите защ�
                 print "<p>Биография: " . $user['Biographi'] . "</p>";
                 print "<p>С политикой: " . $user['contract_agreed'] . "</p>";
                 print "<a href='edit_user.php?id=" . $user['user_id'] . "'>Редактировать</a></br>";
-                print "<a href='delete_user.php?id=" . $user['user_id'] . "'>Удалить</a>";
-                print "</div>";
-
-            }
-            ?>
+                ?>
+        <body>
+                <form method="POST" id="form" class="row g-3 needs-validation" action='delete_user.php?id=" . $user['user_id'] . "'>
+    
+                <button type="submit">Удалить пользователя</button>
+            </form>
+                    print "</div>";
+        </body>
+            <?php
+                }
+             ?>
 
         </div>
 
