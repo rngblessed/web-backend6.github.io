@@ -9,7 +9,8 @@ try {
         [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
     // Проверяем, был ли отправлен запрос на удаление пользователя
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id']) && $_SERVER['PHP_AUTH_USER'] == 'admin' &&
+    md5($_SERVER['PHP_AUTH_PW']) == md5('admin')) {
         $user_id = $_POST['user_id'];
 
         $conn->beginTransaction();
