@@ -95,7 +95,7 @@ print ('Вы успешно авторизовались и видите защ�
                 print "<a href='edit_user.php?id=" . $user['user_id'] . "'>Редактировать</a></br>";
                 ?>
         <body>
-                <form method="POST" id="form" class="row g-3 needs-validation" action='delete_user.php?id=" . $user['user_id'] . "'>
+                <form method="POST" id="form" class="row g-3 needs-validation" action="delete_user.php?id=' . $user['user_id'] . '">
     
                 <button type="submit">Удалить пользователя</button>
             </form>
