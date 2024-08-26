@@ -29,7 +29,7 @@ print ('Вы успешно авторизовались и видите защ�
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZADANIE6</title>
+    <title>Task6</title>
 
 
 </head>
@@ -37,8 +37,8 @@ print ('Вы успешно авторизовались и видите защ�
 
 <body>
 
-    <div class="osnova">
-        <div class="wrap3 lh-lg font-monospace">
+    <div>
+        <div>
             <?php
             $user = 'admin';
             $pass = 'smpP4ssw0rd!';
@@ -63,7 +63,7 @@ print ('Вы успешно авторизовались и видите защ�
             ?>
         </div>
 
-        <div class="wrap1 lh-lg font-monospace">
+        <div>
             <?php
             $user = 'admin';
             $pass = 'smpP4ssw0rd!';
@@ -99,7 +99,6 @@ print ('Вы успешно авторизовались и видите защ�
             <form method="POST" class="needs-validation" action="delete_user.php">    
                 <button type="submit" name="user_id" value="<?=$user['user_id'];?>">Удалить пользователя</button>
             </form>
-            <!--$user['user_id'];-->
         </body>
                     </div>
         

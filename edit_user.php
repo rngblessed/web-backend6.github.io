@@ -54,42 +54,42 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 
 </head>
-<div class="osnova">
-    <div class="wrap1 lh-lg font-monospace">
-        <form method="POST" id="form" class="row g-3 needs-validation">
+<div>
+    <div>
+        <form method="POST" id="form">
 
-            <input type="hidden" class="form-control rounded-pill" name="user_id" value="<?= $user['user_id'] ?>">
-            <div class="col-auto">
+            <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
+            <div>
                 <label>Имя:</label>
-                <input type="text" class="form-control rounded-pill" name="full_name" value="<?= $user['Name'] ?>"><br>
+                <input type="text" name="full_name" value="<?= $user['Name'] ?>"><br>
             </div>
             </br>
-            <div class="col-auto">
+            <div>
                 <label>Телефон:</label>
-                <input type="text" class="form-control rounded-pill" name="phone" value="<?= $user['phone'] ?>"><br>
+                <input type="text" name="phone" value="<?= $user['phone'] ?>"><br>
             </div>
-            <div class="col-auto">
+            <div>
                 <label>Email:</label>
-                <input type="text" class="form-control rounded-pill" name="email" value="<?= $user['email'] ?>"><br>
+                <input type="text" name="email" value="<?= $user['email'] ?>"><br>
             </div>
-            <div class="col-auto">
+            <div>
                 <label>Дата рождения:</label>
-                <input type="date" class="form-control rounded-pill" name="birth_date"
+                <input type="date" name="birth_date"
                     value="<?= $user['birth_date'] ?>"><br>
             </div>
-            <div class="col-auto">
+            <div>
                 <label>Пол:</label>
                 <select name="gender">
                     <option value="male" <?= ($user['gender'] == 'male') ? 'selected' : '' ?>>Мужской</option>
                     <option value="female" <?= ($user['gender'] == 'female') ? 'selected' : '' ?>>Женский</option>
                 </select><br>
             </div>
-            <div class="col-auto">
+            <div>
                 <label>Биография:</label><br>
-                <textarea class="form-control rounded-pill" name="bio"><?= $user['Biographi'] ?></textarea><br>
+                <textareaname="bio"><?= $user['Biographi'] ?></textarea><br>
             </div>
-            <div class="col-auto">
-                <button class="form-control rounded-pill" type="submit">Сохранить</button>
+            <div>
+                <button type="submit">Сохранить</button>
             </div>
         </form>
     </div>

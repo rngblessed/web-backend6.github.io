@@ -16,8 +16,6 @@ $file_path = '/path/to/secure/db.php';
 
 if (strpos($file_path, '/path/to/secure/') === 0) {
     include $file_path;
-} else {
-    // Обработка ошибки включения файла
 }
 // Проверка типа файла
 $allowed_types = ['image/jpeg', 'image/png'];
@@ -25,8 +23,6 @@ $allowed_types = ['image/jpeg', 'image/png'];
 if (in_array($_FILES['file']['type'], $allowed_types)) {
     // Перемещение и сохранение файла
     move_uploaded_file($_FILES['file']['tmp_name'], '/path/to/uploaded/file.jpg');
-} else {
-    // Обработка ошибки загрузки файла
 }
 
 
