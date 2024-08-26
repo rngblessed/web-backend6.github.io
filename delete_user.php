@@ -27,12 +27,12 @@ try {
 
         if ($stmt_delete_user->rowCount() > 0) {
             $conn->commit();
-            echo "Пользователь успешно удален.";
+            $_SESSION['message'] = "Пользователь успешно удален.";
             // Перенаправление на страницу admin.php
             header("Location: admin.php");
             exit(0);
         } else {
-            echo "Пользователь с указанным ID не найден.";
+            $_SESSION['message'] = "Пользователь с указанным ID не найден.";
             header("Location: admin.php");
             exit(0);
         }
