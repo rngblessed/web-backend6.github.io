@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     // Перенаправление на страницу с информацией о пользователе
-    header("Location: admin.php?id=" . $userId);
+    header("Location: index.php?id=" . $userId);
     exit();
 }
 
