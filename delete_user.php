@@ -11,7 +11,7 @@ try {
     // Проверяем, был ли отправлен запрос на удаление пользователя
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['user_delete']) && $_SERVER['PHP_AUTH_USER'] == 'admin' &&
     md5($_SERVER['PHP_AUTH_PW']) == md5('admin')) {
-        $user_id = intval($_GET['user_delete']);
+        $user_id = $_GET['user_delete'];
 
         $conn->beginTransaction();
 
@@ -29,8 +29,8 @@ try {
             $conn->commit();
             echo "Пользователь успешно удален.";
             // Перенаправление на страницу admin.php
-            //header("Location: admin.php");
-            //exit(0);
+            header("Location: admin.php");
+            exit(0);
         } else {
             echo "Пользователь с указанным ID не найден.";
             //header("Location: admin.php");
