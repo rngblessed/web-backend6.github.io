@@ -96,13 +96,12 @@ print ('Вы успешно авторизовались и видите защ�
                 ?>
         <body>
             
-                <form method="POST" class="row g-3 needs-validation" action="delete_user.php">
-           
-    
-                <button type="submit" value="<?=$user['user_id']?>">Удалить пользователя</button>
+            <form method="POST" class="row g-3 needs-validation" action="delete_user.php">    
+                <button type="submit" value="<?=$user['user_id'];?>">Удалить пользователя</button>
             </form>
+            
         </body>
-                    print </div>;
+                    </div>
         
             <?php
                 }

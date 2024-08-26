@@ -9,9 +9,9 @@ try {
         [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
     // Проверяем, был ли отправлен запрос на удаление пользователя
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['user_id']) && $_SERVER['PHP_AUTH_USER'] == 'admin' &&
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id']) && $_SERVER['PHP_AUTH_USER'] == 'admin' &&
     md5($_SERVER['PHP_AUTH_PW']) == md5('admin')) {
-        $user_id = $_GET['user_id'];
+        $user_id = $_POST['user_id'];
 
         $conn->beginTransaction();
 
@@ -30,9 +30,11 @@ try {
             echo "Пользователь успешно удален.";
             // Перенаправление на страницу admin.php
             header("Location: admin.php");
-            exit();
+            exit(0);
         } else {
             echo "Пользователь с указанным ID не найден.";
+            header("Location: admin.php");
+            exit(0);
         }
     }
 } catch (PDOException $e) {
