@@ -97,9 +97,9 @@ print ('Вы успешно авторизовались и видите защ�
         <body>
             
             <form method="POST" class="needs-validation" action="delete_user.php">    
-                <button type="submit" name="user_delete" value="<?=$user['user_id'];?>">Удалить пользователя</button>
+                <button type="submit" name="user_delete" value="Удалить">Удалить пользователя</button>
             </form>
-            
+            <!--$user['user_id'];-->
         </body>
                     </div>
         

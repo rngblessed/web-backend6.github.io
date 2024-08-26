@@ -33,8 +33,8 @@ try {
             exit(0);
         } else {
             echo "Пользователь с указанным ID не найден.";
-            //header("Location: admin.php");
-            //exit(0);
+            header("Location: admin.php");
+            exit(0);
         }
     }
 } catch (PDOException $e) {
