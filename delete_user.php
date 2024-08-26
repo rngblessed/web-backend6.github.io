@@ -1,9 +1,9 @@
 <?php
 try {
-    $user = 'u67323';
-    $pass = '3649631';
+    $user = 'admin';
+    $pass = 'smpP4ssw0rd!';
     $conn = new PDO(
-        'mysql:host=localhost;dbname=u67323',
+        'mysql:host=localhost;dbname=admin',
         $user,
         $pass,
         [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
@@ -55,7 +55,7 @@ $conn = null;
 </head>
 <div class="osnova">
     <div class="wrap1 lh-lg font-monospace">
-        <form method="POST" id="form" class="row g-3 needs-validation" action='delete_user.php?id=<?php echo ($user['user_id']) ?>'>
+        <form method="POST" id="form" class="row g-3 needs-validation" action='delete_user.php?id=<?php $user['user_id']?>'>
 
             <button type="submit">Удалить пользователя</button>
         </form>

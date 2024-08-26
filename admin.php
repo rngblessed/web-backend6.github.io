@@ -40,10 +40,10 @@ print ('Вы успешно авторизовались и видите защ�
     <div class="osnova">
         <div class="wrap3 lh-lg font-monospace">
             <?php
-            $user = 'u67323';
-            $pass = '3649631';
+            $user = 'admin';
+            $pass = 'smpP4ssw0rd!';
             $conn = new PDO(
-                'mysql:host=localhost;dbname=u67323',
+                'mysql:host=localhost;dbname=admin',
                 $user,
                 $pass,
                 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
@@ -65,10 +65,10 @@ print ('Вы успешно авторизовались и видите защ�
 
         <div class="wrap1 lh-lg font-monospace">
             <?php
-            $user = 'u67323';
-            $pass = '3649631';
+            $user = 'admin';
+            $pass = 'smpP4ssw0rd!';
             $conn = new PDO(
-                'mysql:host=localhost;dbname=u67323',
+                'mysql:host=localhost;dbname=admin',
                 $user,
                 $pass,
                 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
@@ -95,7 +95,7 @@ print ('Вы успешно авторизовались и видите защ�
                 print "<a href='edit_user.php?id=" . $user['user_id'] . "'>Редактировать</a></br>";
                 ?>
         <body>
-                <form method="POST" id="form" class="row g-3 needs-validation" action="delete_user.php?id=<?php echo ($user['user_id']) ?>">
+                <form method="POST" id="form" class="row g-3 needs-validation" action="delete_user.php?id=<?php $user['user_id']?>">
     
                 <button type="submit">Удалить пользователя</button>
             </form>
