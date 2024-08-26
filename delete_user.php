@@ -9,7 +9,7 @@ try {
         [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
     // Проверяем, был ли отправлен запрос на удаление пользователя
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['user_id']) && $_SERVER['PHP_AUTH_USER'] == 'admin' &&
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['user_id']) && $_SERVER['PHP_AUTH_USER'] == 'admin' &&
     md5($_SERVER['PHP_AUTH_PW']) == md5('admin')) {
         $user_id = intval($_GET['user_id']);
 
@@ -18,7 +18,7 @@ try {
         // Удаление связанных записей из других таблиц
         $sql_delete_user_languages = "DELETE FROM user_languages WHERE user_id = :user_id";
         $stmt_delete_user_languages = $conn->prepare($sql_delete_user_languages);
-        $stmt_delete_user_languages->execute(['user_delete' => $user_id]);
+        $stmt_delete_user_languages->execute(['user_id' => $user_id]);
 
         // SQL запрос для удаления пользователя
         $sql_delete_user = "DELETE FROM main WHERE user_id = :user_id";
