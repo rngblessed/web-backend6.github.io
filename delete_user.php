@@ -18,7 +18,7 @@ try {
         // Удаление связанных записей из других таблиц
         $sql_delete_user_languages = "DELETE FROM user_languages WHERE user_id = :user_id";
         $stmt_delete_user_languages = $conn->prepare($sql_delete_user_languages);
-        $stmt_delete_user_languages->execute(['user_id' => $user_id]);
+        $stmt_delete_user_languages->execute(['user_delete' => $user_id]);
 
         // SQL запрос для удаления пользователя
         $sql_delete_user = "DELETE FROM main WHERE user_id = :user_id";
