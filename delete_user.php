@@ -45,19 +45,3 @@ try {
 // Закрываем соединение с базой данных
 $conn = null;
 ?>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZADANIE6</title>
-
-
-</head>
-<div class="osnova">
-    <div class="wrap1 lh-lg font-monospace">
-        <form method="POST" id="form" class="row g-3 needs-validation" action='delete_user.php?id=<?php $user['user_id']?>'>
-
-            <button type="submit">Удалить пользователя</button>
-        </form>
-    </div>
-</div>
